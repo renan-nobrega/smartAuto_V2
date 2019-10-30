@@ -2,7 +2,7 @@
 include_once '../include/db.php';
 $nome           = (string)$_POST['name'];
 $senha          = (string)$_POST['senha'];
-$logaUsuario  = phpLibLogaUsuario($nome, $senha);
+//$logaUsuario  = phpLibLogaUsuario($nome, $senha);
 if(!$logaUsuario){
     header("Location: ../login.php?error=1");
     exit;  
