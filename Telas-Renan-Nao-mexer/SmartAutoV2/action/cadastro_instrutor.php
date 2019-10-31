@@ -11,17 +11,19 @@ include_once '../include/cadastro.php';
 /********************************************************************/
 $nome           = (string)$_POST['nome'];
 $cpf            = (string)$_POST['cpf'];
+$cnh            = (string)$_POST['cnh'];
 $email          = (string)$_POST['email'];
+$carro          = (string)$_POST['carro'];
+$carro          = (string)$_POST['carro'];
 $senha          = (string)$_POST['senha'];
-
 
 
 /********************************************************************/
 /*  inserir novo usuário                                            */
 /********************************************************************/
-$salvaCadastro  = phpLibSalvaUsuario($nome, $cpf, $email, $senha);
+$salvaCadastro  = phpLibSalvaInstrutor($nome, $cpf, $cnh, $email, $carro, $senha);
 if(!$salvaCadastro){
-echo '<pre>';print_r('Deu Ruim');exit;    
+    echo '<pre>';print_r('Deu Ruim');exit;    
 }
 
 header('Location: ../cadastro_aluno.php?testeSucesso=1');

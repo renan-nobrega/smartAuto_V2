@@ -30,8 +30,8 @@
 <link rel="stylesheet" href="css/responsive.css">
 <!-- Color Style -->
 <link href="css/color/color-1.css" rel="stylesheet">
-
-
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.13.1/bootstrap-table.min.css">
 
 
 

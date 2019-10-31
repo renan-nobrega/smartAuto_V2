@@ -1,6 +1,7 @@
 <div class="footer-area overlay overlay-black overlay-70 pt-90">
     <div class="container">
         <div class="row">
+<!--
             <div class="footer-widget text-left col-md-3 col-sm-6 col-xs-12">
                 <h4 class="widget-title">about drive on</h4>
                 <div class="about-widget">
@@ -13,6 +14,8 @@
                     </div>
                 </div>
             </div>
+-->
+<!--
             <div class="footer-widget text-left col-md-3 col-sm-6 col-xs-12">
                 <h4 class="widget-title">quick contact</h4>
                 <div class="contact-widget">
@@ -27,9 +30,11 @@
                     </p>
                 </div>
             </div>
+-->
             <div class="footer-widget text-left col-md-3 col-sm-6 col-xs-12">
-                <h4 class="widget-title">blog post</h4>
+<!--                <h4 class="widget-title">blog post</h4>-->
                 <div class="blog-widget">
+<!--
                     <div class="widget-blog fix">
                         <a href="#" class="image float-left"><img src="img/blog-widget/0.jpg" alt="" /></a>
                         <div class="content fix">
@@ -37,6 +42,8 @@
                             <p>It is a long established fact that is a reader will be...</p>
                         </div>
                     </div>
+-->
+<!--
                     <div class="widget-blog fix">
                         <a href="#" class="image float-left"><img src="img/blog-widget/2.jpg" alt="" /></a>
                         <div class="content fix">
@@ -44,6 +51,8 @@
                             <p>It is a long established fact that is a reader will be...</p>
                         </div>
                     </div>
+-->
+<!--
                     <div class="widget-blog fix">
                         <a href="#" class="image float-left"><img src="img/blog-widget/3.jpg" alt="" /></a>
                         <div class="content fix">
@@ -51,6 +60,7 @@
                             <p>It is a long established fact that is a reader will be...</p>
                         </div>
                     </div>
+-->
                 </div>
             </div>
 
@@ -83,3 +93,8 @@
 <!-- Main JS
 ============================================ -->
 <script src="js/main.js"></script>
+<!-- Latest compiled and minified Locales -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.13.1/locale/bootstrap-table-zh-CN.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.13.1/bootstrap-table.min.js"></script>
+

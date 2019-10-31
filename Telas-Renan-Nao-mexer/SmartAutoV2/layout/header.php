@@ -81,7 +81,7 @@
                     <div class="hero-slide-content text-center">
                         <h3 class="wow fadeInUp" data-wow-duration=".9s" data-wow-delay="0.8s">Bem vindo a SmartAuto</h3>
                         <h1 class="wow fadeInUp" data-wow-duration=".9s" data-wow-delay="1.2s">SMART <span>AUTO</span></h1>
-                        <p class="wow fadeInUp" data-wow-duration=".9s" data-wow-delay="1.6s">Lorem ipsum dolor sit amet, consectetur adipiscing elit, minim veniamsed sed do <br />eiusmod tempor maksu rez ut labore  magna do eiusmod</p>
+                        <p class="wow fadeInUp" data-wow-duration=".9s" data-wow-delay="1.6s">Eiiitaaa Mainhaaa!! Esse Lorem ipsum é só na sacanageeem!! E que abundância meu irmão viuu!! Assim você vai matar o papai. Só digo uma coisa, Domingo ela não vai! Danadaa!! Vem minha odalisca, agora faz essa cobra coral subir!!! Pau que nasce torto, Nunca se endireita. Tchannn!! Tchannn!! Tu du du pááá! Eu gostchu muitchu, heinn! danadinha! Mainhaa! Agora use meu lorem ipsum ordinária!!! Olha o quibeee! rema, rema, ordinária!.</p>
                         <div class="button-group">
                             <a href="#" class="btn transparent wow fadeInLeft" data-wow-duration=".9s" data-wow-delay="2s">book lesson</a>
                             <a href="#" class="btn color wow fadeInRight" data-wow-duration=".9s" data-wow-delay="2s">learn more</a>
