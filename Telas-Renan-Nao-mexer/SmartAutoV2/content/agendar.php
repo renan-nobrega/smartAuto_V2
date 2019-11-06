@@ -22,7 +22,7 @@
                         <?php } ?>
                         <table id="table"
                                data-toggle="table"
-                               data-url="table/lista_horarios_disp.php?idMenu=<?php echo $idMenu; ?>"
+                               data-url="table/agendar.php?idMenu=<?php echo $idMenu; ?>"
                                data-show-pagination-switch="true"
                                data-show-columns="true"
                                data-pagination="true"
