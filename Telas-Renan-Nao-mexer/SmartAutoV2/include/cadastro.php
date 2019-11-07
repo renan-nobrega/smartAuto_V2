@@ -45,4 +45,22 @@ VALUES ('$nome', '$cpf', '$cnh', '$email', '$carro', '$senha')";
     return mysql_insert_id();    
 }
 
+/********************************************************************/
+/*  pesquisa se usuário já existe                                   */
+/********************************************************************/
+function phpLibLogaUsuario($email, $senha){
+    $sql = "SELECT * 
+    FROM cadastro
+    WHERE email = '$email' AND senha = '$senha';
+";
+    //        return $sql;
+    $result = mysql_query($sql);
+    if(!$result) return false;
+    if(mysql_num_rows($result)>0) {
+        while($row = mysql_fetch_assoc($result)) {
+            $r[] = $row;
+        }
+    } else return false;
+    return $r;   
+}
 ?>
