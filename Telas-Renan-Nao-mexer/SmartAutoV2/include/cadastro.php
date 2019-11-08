@@ -36,10 +36,10 @@ VALUES ('$placa', '$marca', '$modelo')";
 /********************************************************************/
 /*  cadastra um novo carro                                          */
 /********************************************************************/
-function phpLibSalvaInstrutor($nome, $cpf, $cnh, $email, $carro, $senha){
-    $sql = "INSERT INTO cadastro_instrutor (nome, cpf, cnh, email, carro, senha)
-VALUES ('$nome', '$cpf', '$cnh', '$email', '$carro', '$senha')";
-    //    return $sql;
+function phpLibSalvaInstrutor($nome, $cpf, $cnh, $email, $carro, $periodo, $senha, $tipoUsuario){
+    $sql = "INSERT INTO cadastro (nome, cpf, cnh, email, idCarro, idPeriodo, senha, tipoUsuario)
+VALUES ('$nome', '$cpf', '$cnh', '$email', '$carro', '$periodo', '$senha', '$tipoUsuario')";
+//        return $sql;
     $result = mysql_query($sql);
     if(!$result) return false;
     return mysql_insert_id();    
