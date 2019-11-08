@@ -10,9 +10,9 @@
 /********************************************************************/
 /*  cadastra um novo aluno                                          */
 /********************************************************************/
-function phpLibSalvaUsuario($nome, $cpf, $email, $senha){
-    $sql = "INSERT INTO cadastro_aluno (nome, cpf, email, senha)
-VALUES ('$nome', '$cpf', '$email', '$senha')";
+function phpLibSalvaUsuario($nome, $cpf, $email, $senha, $tipoUsuario){
+    $sql = "INSERT INTO cadastro (nome, cpf, email, senha, tipoUsuario)
+VALUES ('$nome', '$cpf', '$email', '$senha', $tipoUsuario)";
 //    return $sql;
 $result = mysql_query($sql);
 if(!$result) return false;
