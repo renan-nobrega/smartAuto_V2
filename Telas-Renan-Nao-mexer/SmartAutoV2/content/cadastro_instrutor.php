@@ -55,10 +55,24 @@
                     <span class="input-group-addon"><i class="fa fa-rebel" aria-hidden="true"></i></span>
                     <select name="carro" class="form-control selectpicker">
                         <option value="">Selecione o Carro</option>
-                        <option>Department of Engineering</option>
-                        <option>Department of Agriculture</option>
-                        <option >Accounting Office</option>
-                        <option >Tresurer's Office</option>
+                        <option value="1">Department of Engineering</option>
+                        <option value="2">Department of Agriculture</option>
+                        <option value="3" >Accounting Office</option>
+                        <option value="4" >Tresurer's Office</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="form-group"> 
+            <label class="col-md-4 control-label">Selecione o período de aulas</label>
+            <div class="col-md-4 selectContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-rebel" aria-hidden="true"></i></span>
+                    <select name="periodo" class="form-control selectpicker">
+                        <option value="">Selecione um período</option>
+                        <option value="1">Manhã</option>
+                        <option value="2">Tarde</option>
+                        <option value="3">Ambos</option>                        
                     </select>
                 </div>
             </div>

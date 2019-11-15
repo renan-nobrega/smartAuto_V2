@@ -13,20 +13,20 @@ $nome           = (string)$_POST['nome'];
 $cpf            = (string)$_POST['cpf'];
 $cnh            = (string)$_POST['cnh'];
 $email          = (string)$_POST['email'];
-$carro          = (string)$_POST['carro'];
-$carro          = (string)$_POST['carro'];
+$carro          = (int)$_POST['carro'];
+$periodo        = (int)$_POST['periodo'];
 $senha          = (string)$_POST['senha'];
-
+$tipoUsuario    = 2;
 
 /********************************************************************/
 /*  inserir novo usuário                                            */
 /********************************************************************/
-$salvaCadastro  = phpLibSalvaInstrutor($nome, $cpf, $cnh, $email, $carro, $senha);
+$salvaCadastro  = phpLibSalvaInstrutor($nome, $cpf, $cnh, $email, $carro, $periodo, $senha, $tipoUsuario);
 if(!$salvaCadastro){
-    echo '<pre>';print_r('Deu Ruim');exit;    
+    echo '<pre>';print_r($salvaCadastro);exit;    
 }
 
-header('Location: ../cadastro_aluno.php?testeSucesso=1');
+header('Location: ../agendar.php?testeSucesso=1');
 exit;
 
 
