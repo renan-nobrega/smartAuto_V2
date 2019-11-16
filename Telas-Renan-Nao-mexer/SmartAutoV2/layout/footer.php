@@ -65,7 +65,7 @@
             </div>
 
             <div class="footer-bottom text-center col-xs-12">
-                <p class="copyright">Copyright <i class="fa fa-copyright"></i> 2018 <a href="https://freethemescloud.com/" target="_blank" >Free Themes Cloud.</a> All rights reserved. </p>
+                <p class="copyright">Copyright <i class="fa fa-copyright"></i> 2019 <a href="https://freethemescloud.com/" target="_blank" >Moises não sabe.</a> All rights reserved. </p>
             </div>
         </div>
     </div>

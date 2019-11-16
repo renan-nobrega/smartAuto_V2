@@ -9,6 +9,21 @@ $error = (int)$_GET['error'];
 <html>
     <head>
         <meta charset="UTF-8">
+        
+        
+        
+
+
+<title>Smart Auto</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="img/fusca2.jpg">
+<!-- Fonts -->
+<link href="fonts/lato/lato.css" rel="stylesheet">
+        
+        
+        
         <title>CodePen - Random Login Form</title>
         <style>
             @import url(http://fonts.googleapis.com/css?family=Exo:100,200,400);

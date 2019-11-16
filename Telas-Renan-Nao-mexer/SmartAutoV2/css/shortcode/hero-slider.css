@@ -256,7 +256,7 @@
   color: #333;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 800px) {
 .boxed-layout .nivo-caption, .box-layout .nivo-caption {
   padding-top: 70px;
 }
