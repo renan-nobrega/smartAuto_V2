@@ -1,5 +1,5 @@
 <?php 
-$db_table   = 'smartAuto';            //default: miniacademia
+$db_table   = 'smartAuto_V2';            //default: miniacademia
 $db_host    = 'localhost';                //default: localhost
 $db_port    = '8888';                           //default: 8888 3306
 $db_user    = 'root';

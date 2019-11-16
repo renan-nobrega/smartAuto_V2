@@ -1,31 +1,20 @@
 <?php 
 include_once '../include/db.php';
-$nome           = (string)$_POST['name'];
+include_once '../include/cadastro.php';
+
+$email          = (string)$_POST['email'];
 $senha          = (string)$_POST['senha'];
-$logaUsuario  = phpLibLogaUsuario($nome, $senha);
+$logaUsuario  = phpLibLogaUsuario($email, $senha);
+
 if(!$logaUsuario){
-    header("Location: ../login.php?error=1");
-    exit;  
+    header("Location: ../index.php?error=1");
+    exit;
 }
 $idUsuario = $logaUsuario[0]['idUsuario'];
-header("Location: ../agendamento.php?idUsuario=$idUsuario");
+header("Location: ../agendar.php?idUsuario=$idUsuario");
 exit;
 /********************************************************************/
 /*  funcções PHP                                                    */
 /********************************************************************/
-function phpLibLogaUsuario($nome, $senha){
-    $sql = "SELECT * 
-    FROM cadastro 
-    WHERE nome = '$nome' AND senha = '$senha';
-";
-    //        return $sql;
-    $result = mysql_query($sql);
-    if(!$result) return false;
-    if(mysql_num_rows($result)>0) {
-        while($row = mysql_fetch_assoc($result)) {
-            $r[] = $row;
-        }
-    } else return false;
-    return $r;   
-}
+
 ?>
