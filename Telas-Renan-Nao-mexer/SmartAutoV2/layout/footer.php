@@ -98,3 +98,8 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.13.1/bootstrap-table.min.js"></script>
 
+
+
+<!---------------------------------------------------------------------------------------
+< teste JS 
+<---------------------------------------------------------------------------------------->

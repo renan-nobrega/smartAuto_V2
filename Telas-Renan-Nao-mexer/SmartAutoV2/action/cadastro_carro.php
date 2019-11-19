@@ -14,7 +14,7 @@ $marca          = (string)$_POST['marca'];
 $modelo         = (string)$_POST['modelo'];
 
 
-
+//echo '<pre>';print_r($_POST);exit;
 /********************************************************************/
 /*  inserir novo usuário                                            */
 /********************************************************************/
@@ -23,7 +23,7 @@ if(!$salvaCadastro){
     echo '<pre>';print_r('Deu Ruim');exit;    
 }
 
-header('Location: ../cadastro_aluno.php?testeSucesso=1');
+header('Location: ../cadastro_carro.php?testeSucesso=1');
 exit;
 
 

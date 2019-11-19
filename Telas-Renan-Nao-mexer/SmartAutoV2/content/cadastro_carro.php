@@ -36,11 +36,6 @@
             </div>
         </div>
 
-
-
-
-        <!-- Text input-->
-
         <div class="form-group">
             <label class="col-md-4 control-label">Modelo</label>  
             <div class="col-md-4 inputGroupContainer">
@@ -51,26 +46,6 @@
                 </div>
             </div>
         </div>
-
-
-
-<!--
-<div class="form-group"> 
-<label class="col-md-4 control-label">Department / Office</label>
-<div class="col-md-4 selectContainer">
-<div class="input-group">
-<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-<select name="department" class="form-control selectpicker">
-<option value="">Select your Department/Office</option>
-<option>Department of Engineering</option>
-<option>Department of Agriculture</option>
-<option >Accounting Office</option>
-<option >Tresurer's Office</option>
-</select>
-</div>
-</div>
-</div>
--->
 
 
         <!-- Button -->

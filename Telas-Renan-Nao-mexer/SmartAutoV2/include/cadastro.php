@@ -25,7 +25,7 @@ return mysql_insert_id();
 /*  cadastra um novo carro                                          */
 /********************************************************************/
 function phpLibSalvaCarro($placa, $marca, $modelo){
-    $sql = "INSERT INTO cadastro_carro (placa, marca, modelo)
+    $sql = "INSERT INTO carros (placa, marca, modelo)
 VALUES ('$placa', '$marca', '$modelo')";
     //    return $sql;
     $result = mysql_query($sql);
