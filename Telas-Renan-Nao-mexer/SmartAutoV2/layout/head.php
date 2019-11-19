@@ -1,10 +1,10 @@
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>Home || SysAuto Escola</title>
+<title>Smart Auto</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Favicon -->
-<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="img/fusca2.jpg">
 <!-- Fonts -->
 <link href="fonts/lato/lato.css" rel="stylesheet">
 <!-- CSS -->
