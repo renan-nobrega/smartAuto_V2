@@ -15,7 +15,7 @@
                 <?php } ?>
                 <table id="table"
                        data-toggle="table"
-                       data-url="table/agendar.php"
+                       data-url="tables/agendar.php"
                        data-show-pagination-switch="true"
                        data-show-columns="true"
                        data-pagination="true"
@@ -34,6 +34,8 @@
                             <th data-field="dia" data-filter-control="input" data-align="center" data-sortable="true" data-visible="true" data-order="asc">Dia
                             </th>
                             <th data-field="horario" data-filter-control="input" data-align="center" data-sortable="true" data-visible="true" class="col-xs-1">Horário
+                            </th>
+                            <th data-field="carro" data-filter-control="input" data-align="center" data-sortable="true" data-visible="true" class="col-xs-1">Carro
                             </th>
                             <th data-field="btn_reservar" data-filter-control="input" data-align="center" data-sortable="true" data-visible="true" class="col-xs-1">Reservar Aula
                             </th>                                 

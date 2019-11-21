@@ -26,7 +26,7 @@
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-rebel" aria-hidden="true"></i></span>
                     <select name="marca" class="form-control selectpicker">
-                        <option value="">Selecione Uma Marca</option>
+                        <option value="cherry">Cherry</option>
                         <option value="volkswagen">Volkswagen</option>
                         <option value="fiat">Fiat</option>
                         <option value="ford">Ford</option>

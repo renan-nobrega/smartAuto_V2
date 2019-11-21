@@ -63,4 +63,166 @@ function phpLibLogaUsuario($email, $senha){
     } else return false;
     return $r;   
 }
+
+/********************************************************************/
+/*  Busca todos os instrutores cadastrados                          */
+/********************************************************************/
+function get_all_instrutores(){
+    $sql = "SELECT * 
+    FROM cadastro
+    WHERE tipoUsuario = '2' AND status = '1';
+    ";
+//            return $sql;
+    $result = mysql_query($sql);
+    if(!$result) return false;
+    if(mysql_num_rows($result)>0) {
+        while($row = mysql_fetch_assoc($result)) {
+            $r[] = $row;
+        }
+    } else return false;
+    return $r;   
+}
+
+
+/********************************************************************/
+/*  Busca todos os carros cadastrados                               */
+/********************************************************************/
+function get_all_carros(){
+    $sql = "SELECT * 
+    FROM carros
+    WHERE status = '1';
+    ";
+    //            return $sql;
+    $result = mysql_query($sql);
+    if(!$result) return false;
+    if(mysql_num_rows($result)>0) {
+        while($row = mysql_fetch_assoc($result)) {
+            $r[] = $row;
+        }
+    } else return false;
+    return $r;   
+}
+
+
+/********************************************************************/
+/*  cadastrar aula                                                  */
+/********************************************************************/
+function phpLibSalvaAula($data, $horario, $idInstrutor, $idCarro){
+    $sql = "INSERT INTO aulaCadastrada (dia, idHorario, idInstrutor, idCarro)
+VALUES ('$data', '$horario', '$idInstrutor', '$idCarro')";
+    //        return $sql;
+    $result = mysql_query($sql);
+    if(!$result) return false;
+    return mysql_insert_id();    
+}
+
+
+/********************************************************************/
+/*  Busca todas as aulas cadastrados                               */
+/********************************************************************/
+function get_all_aulas_cadastradas(){
+    $sql = "SELECT * 
+    FROM aulaCadastrada
+    WHERE status = '1';
+    ";
+    //            return $sql;
+    $result = mysql_query($sql);
+    if(!$result) return false;
+    if(mysql_num_rows($result)>0) {
+        while($row = mysql_fetch_assoc($result)) {
+            $r[] = $row;
+        }
+    } else return false;
+    return $r;   
+}
+
+/********************************************************************/
+/*  Troca o ID da horario pelo horario                              */
+/********************************************************************/
+function horarioAula($idHorarioAula){
+    switch ($idHorarioAula) {
+        case 1:
+            $r = "08:00";
+            break;
+        case 2:
+            $r = "09:00";
+            break;
+        case 3:
+            $r = "10:00";
+            break;
+        case 4:
+            $r = "11:00";
+            break;
+        case 5:
+            $r = "12:00";
+            break;
+        case 6:
+            $r = "13:00";
+            break;
+        case 7:
+            $r = "14:00";
+            break;
+        case 8:
+            $r = "15:00";
+            break;
+        case 9:
+            $r = "16:00";
+            break;
+        case 10:
+            $r = "17:00";
+            break;
+        case 11:
+            $r = "18:00";
+            break;
+        case 12:
+            $r = "19:00";
+            break;            
+    }
+    
+    
+    return $r;   
+}
+
+
+/********************************************************************/
+/*  busca os dados do instrutor apartir do ID                       */
+/********************************************************************/
+function getInstrutor($idInstrutor){
+    $sql = "SELECT * 
+    FROM cadastro
+    WHERE idAluno = '$idInstrutor' AND status = '1';
+    ";
+    //            return $sql;
+    $result = mysql_query($sql);
+    if(!$result) return false;
+    if(mysql_num_rows($result)>0) {
+        while($row = mysql_fetch_assoc($result)) {
+            $r = $row;
+        }
+    } else return false;
+    return $r;   
+}
+
+
+/********************************************************************/
+/*  busca os dados do carro apartir do ID                       */
+/********************************************************************/
+function getCarro($idCarro){
+    $sql = "SELECT * 
+    FROM carros
+    WHERE idCarro = '$idCarro' AND status = '1';
+    ";
+    //            return $sql;
+    $result = mysql_query($sql);
+    if(!$result) return false;
+    if(mysql_num_rows($result)>0) {
+        while($row = mysql_fetch_assoc($result)) {
+            $r = $row;
+        }
+    } else return false;
+    return $r;   
+}
+
+
+
 ?>

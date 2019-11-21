@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 19-Nov-2019 às 17:53
+-- Generation Time: 21-Nov-2019 às 17:47
 -- Versão do servidor: 5.7.27-0ubuntu0.16.04.1
 -- PHP Version: 5.6.39-1+ubuntu16.04.1+deb.sury.org+1
 
@@ -19,6 +19,29 @@ SET time_zone = "+00:00";
 --
 -- Database: `smartAuto_V2`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `aulaCadastrada`
+--
+
+CREATE TABLE `aulaCadastrada` (
+  `idAula` int(20) NOT NULL,
+  `dia` varchar(512) NOT NULL,
+  `idHorario` int(20) NOT NULL,
+  `idInstrutor` int(20) NOT NULL,
+  `idCarro` int(20) NOT NULL,
+  `status` int(20) NOT NULL DEFAULT '1' COMMENT '1 = livre / 2 = reservada / 0 = Cancelada'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `aulaCadastrada`
+--
+
+INSERT INTO `aulaCadastrada` (`idAula`, `dia`, `idHorario`, `idInstrutor`, `idCarro`, `status`) VALUES
+(1, '11/22/2019', 4, 5, 2, 1),
+(2, '11/25/2019', 4, 3, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -78,6 +101,12 @@ INSERT INTO `carros` (`idCarro`, `placa`, `marca`, `modelo`, `disponivel`, `stat
 --
 
 --
+-- Indexes for table `aulaCadastrada`
+--
+ALTER TABLE `aulaCadastrada`
+  ADD PRIMARY KEY (`idAula`);
+
+--
 -- Indexes for table `cadastro`
 --
 ALTER TABLE `cadastro`
@@ -94,10 +123,15 @@ ALTER TABLE `carros`
 --
 
 --
+-- AUTO_INCREMENT for table `aulaCadastrada`
+--
+ALTER TABLE `aulaCadastrada`
+  MODIFY `idAula` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT for table `cadastro`
 --
 ALTER TABLE `cadastro`
-  MODIFY `idAluno` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idAluno` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `carros`
 --
