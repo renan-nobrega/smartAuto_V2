@@ -13,11 +13,12 @@ $aulas_cadastradas      = get_all_aulas_cadastradas();
 /****************************************************************/
 $i = 0;
 foreach($aulas_cadastradas as $aulas){
+    $idAula         = $aulas['idAula'];
     $diaAula        = $aulas['dia'];
     $hora           = horarioAula($aulas['idHorario']);
     $instrutor      = getInstrutor($aulas['idInstrutor'])['nome'];
     $idCarro        = getCarro($aulas['idCarro'])['modelo'];
-    $acoesStatus    = "<a href='action/agendar.php' role='button' class='btn btn-block btn-danger btn-xs' ><i class='fa fa-rebel'></i></a>";
+    $acoesStatus    = "<a href='action/agendar.php?idAula=".$idAula."' role='button' class='btn btn-block btn-danger btn-xs' ><i class='fa fa-rebel'></i></a>";
 
 
     /****************************************************************/

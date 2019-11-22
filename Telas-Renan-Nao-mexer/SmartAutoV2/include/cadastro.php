@@ -224,5 +224,17 @@ function getCarro($idCarro){
 }
 
 
+/********************************************************************/
+/*  reserva aula                                                  */
+/********************************************************************/
+function phpLibReservaAula($idAula){
+    $sql = "ALTER TABLE aulaCadastrada (status)
+VALUES ('$data', '$horario', '$idInstrutor', '$idCarro')";
+    //        return $sql;
+    $result = mysql_query($sql);
+    if(!$result) return false;
+    return mysql_insert_id();    
+}
+
 
 ?>
