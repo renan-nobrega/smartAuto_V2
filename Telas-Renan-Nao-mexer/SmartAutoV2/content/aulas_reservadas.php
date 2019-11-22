@@ -1,6 +1,6 @@
 <br>
 <div class="container">
-<?php
+    <?php
     $idUsuario            = (int)$_GET['idUsuario'];
 
     ?>
@@ -9,16 +9,13 @@
             <!--            <div class="blog blog-info">-->
             <!-- HEAD -->
             <div class="blog-header">
-                <h5 class="blog-title">Aulas Disponíveis para Agendamento</h5>
+                <h5 class="blog-title">Aulas Agendadas</h5>
             </div>
             <!--                <div class="blog-body" style="overflow: visible;">-->
-            <div class="table-responsive">
-                <?php if($usuario_lote) { ?>
-
-                <?php } ?>
+            <div class="table-responsive">            
                 <table id="table"
                        data-toggle="table"
-                       data-url="tables/agendar.php?idUsuario=<?php echo $idUsuario ?>"
+                       data-url="tables/aulas_reservadas.php?idUsuario=<?php echo $idUsuario ?>"
                        data-show-pagination-switch="true"
                        data-show-columns="true"
                        data-pagination="true"
@@ -40,8 +37,7 @@
                             </th>
                             <th data-field="carro" data-filter-control="input" data-align="center" data-sortable="true" data-visible="true" class="col-xs-1">Carro
                             </th>
-                            <th data-field="btn_reservar" data-filter-control="input" data-align="center" data-sortable="true" data-visible="true" class="col-xs-1">Reservar Aula
-                            </th>                                 
+                                                            
 
                         </tr>
                     </thead>

@@ -6,16 +6,15 @@
 require_once '../include/db.php';
 require_once '../include/cadastro.php';
 
-$idUsuario                           = (int)$_GET['idUsuario'];
-$aulas_cadastradas                   = get_all_aulas_cadastradas();
+$idUsuario                          = (int)$_GET['idUsuario'];
+$aulas_reservadas                   = get_all_aulas_reservadas($idUsuario);
 
 /****************************************************************/
 /* CONTEUDO                                                     */
 /****************************************************************/
 $i = 0;
-foreach($aulas_cadastradas as $aulas){
+foreach($aulas_reservadas as $aulas){
     $idAula         = $aulas['idAula'];
-//echo '<pre>';print_r($idUsuario);exit;
     $diaAula        = $aulas['dia'];
     $hora           = horarioAula($aulas['idHorario']);
     $instrutor      = getInstrutor($aulas['idInstrutor'])['nome'];
@@ -26,6 +25,7 @@ foreach($aulas_cadastradas as $aulas){
     /****************************************************************/
     /* MONTAGEM DO JSON                                             */
     /****************************************************************/
+//    echo '<pre>';print_r($idCarro);exit;
     $r[$i]['instrutor']                         = $instrutor;
     $r[$i]['dia']                               = $diaAula;
     $r[$i]['horario']                           = $hora;

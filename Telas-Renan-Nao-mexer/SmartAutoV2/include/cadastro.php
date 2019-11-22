@@ -61,7 +61,7 @@ function phpLibLogaUsuario($email, $senha){
             $r[] = $row;
         }
     } else return false;
-    return $r;   
+    return $r[0];   
 }
 
 /********************************************************************/
@@ -225,15 +225,127 @@ function getCarro($idCarro){
 
 
 /********************************************************************/
-/*  reserva aula                                                  */
+/*  reserva aula                                                    */
 /********************************************************************/
-function phpLibReservaAula($idAula){
-    $sql = "ALTER TABLE aulaCadastrada (status)
-VALUES ('$data', '$horario', '$idInstrutor', '$idCarro')";
-    //        return $sql;
+function phpLibReservaAula($idAula, $idAluno){
+    $sql = "UPDATE aulaCadastrada
+    SET status = '2',
+        idAluno= '$idAluno'
+    WHERE idAula = '$idAula'
+    ";
+//            return $sql;
     $result = mysql_query($sql);
     if(!$result) return false;
-    return mysql_insert_id();    
+    return 1;    
+}
+
+
+
+/********************************************************************/
+/*  busca as aulas reservadas do aluno                              */
+/********************************************************************/
+function get_all_aulas_reservadas($idUsuario){
+    $sql = "SELECT * 
+    FROM aulaCadastrada
+    WHERE idAluno = '$idUsuario' AND status = '2';
+    ";
+//                return $sql;
+    $result = mysql_query($sql);
+    if(!$result) return false;
+    if(mysql_num_rows($result)>0) {
+        while($row = mysql_fetch_assoc($result)) {
+            $r[] = $row;
+        }
+    } else return false;
+    return $r;   
+}
+
+
+/********************************************************************/
+/*  busca as aulas reservadas do Instrutor                          */
+/********************************************************************/
+function get_all_aulas_do_instrutor($idUsuario){
+    $sql = "SELECT * 
+    FROM aulaCadastrada
+    WHERE idInstrutor = '$idUsuario' AND status = '2';
+    ";
+//                    return $sql;
+    $result = mysql_query($sql);
+    if(!$result) return false;
+    if(mysql_num_rows($result)>0) {
+        while($row = mysql_fetch_assoc($result)) {
+            $r[] = $row;
+        }
+    } else return false;
+    return $r;   
+}
+
+
+/********************************************************************/
+/*  busca o ID do aluno apartir do ID da aula                       */
+/********************************************************************/
+function getIdAluno($idAula){
+    $sql = "SELECT idAluno
+    FROM aulaCadastrada
+    WHERE idAula = '$idAula' AND status = '2';
+    ";
+    //            return $sql;
+    $result = mysql_query($sql);
+    if(!$result) return false;
+    if(mysql_num_rows($result)>0) {
+        while($row = mysql_fetch_assoc($result)) {
+            $r = $row;
+        }
+    } else return false;
+    return $r;   
+}
+
+/********************************************************************/
+/*  busca o nome do aluno apartir do ID                             */
+/********************************************************************/
+function getAlunoNome($idAluno){
+    $sql = "SELECT nome
+    FROM cadastro
+    WHERE idAluno = '$idAluno' AND status = '1';
+    ";
+//                return $sql;
+    $result = mysql_query($sql);
+    if(!$result) return false;
+    if(mysql_num_rows($result)>0) {
+        while($row = mysql_fetch_assoc($result)) {
+            $r = $row;
+        }
+    } else return false;
+    return $r;   
+}
+
+
+/********************************************************************/
+/*  Marca que a aula foi concluida                                  */
+/********************************************************************/
+function phpLibMarcarAulaDada($idAula, $idAluno){
+    $sql = "UPDATE aulaCadastrada
+    SET status = '3'
+    WHERE idAula = '$idAula'
+    ";
+//                return $sql;
+    $result = mysql_query($sql);
+    if(!$result) return false;
+    return 1;    
+}
+
+/********************************************************************/
+/*  Marca que a aula foi concluida                                  */
+/********************************************************************/
+function phpLibMarcarAulaNaoDada($idAula, $idAluno){
+    $sql = "UPDATE aulaCadastrada
+    SET status = '4'
+    WHERE idAula = '$idAula'
+    ";
+    //                return $sql;
+    $result = mysql_query($sql);
+    if(!$result) return false;
+    return 1;    
 }
 
 

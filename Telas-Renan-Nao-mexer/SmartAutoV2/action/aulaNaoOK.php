@@ -15,13 +15,13 @@ $idUsuario              = (int)$_GET['idUsuario'];
 /********************************************************************/
 /*  Alterar status aula                                             */
 /********************************************************************/
-$salvaReservaAula  = phpLibReservaAula($idAula, $idUsuario);
-if(!$salvaReservaAula){
-echo '<pre>';print_r('deu ruim');exit;    
+$marcarAulaDada  = phpLibMarcarAulaNaoDada($idAula, $idUsuario);
+if(!$marcarAulaDada){
+    header("Location: ../instrutor_aulas.php?result=0&idUsuario=$idUsuario");
 }
 
 
-header("Location: ../agendar.php?testeSucesso=1&idUsuario=$idUsuario");
+header("Location: ../instrutor_aulas.php?result=1&idUsuario=$idUsuario");
 exit;
 
 
