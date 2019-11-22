@@ -17,7 +17,8 @@ $idUsuario              = (int)$_GET['idUsuario'];
 /********************************************************************/
 $marcarAulaDada  = phpLibMarcarAulaNaoDada($idAula, $idUsuario);
 if(!$marcarAulaDada){
-    header("Location: ../instrutor_aulas.php?result=1&idUsuario=$idUsuario");
+    header("Location: ../instrutor_aulas.php?result=2&idUsuario=$idUsuario");
+    exit;
 }
 
 

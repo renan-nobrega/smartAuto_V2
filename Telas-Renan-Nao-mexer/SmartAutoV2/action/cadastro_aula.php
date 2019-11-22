@@ -19,7 +19,8 @@ $idCarro            = (int)$_POST['carro'];
 /********************************************************************/
 $comparaAula        = verificaInstrutorLivre($data, $horario, $idInstrutor);
 if($comparaAula == 2){
-    header("Location: ../cadastro_aula.php?result=0&idUsuario=$idUsuario");exit;
+    header("Location: ../cadastro_aula.php?result=6&idUsuario=$idUsuario");
+    exit;
 }
 
 
@@ -28,20 +29,22 @@ if($comparaAula == 2){
 /********************************************************************/
 $comparaAulaCarro        = verificaCarroLivre($data, $horario, $idCarro);
 if($comparaAulaCarro == 2){
-    header("Location: ../cadastro_aula.php?result=2&idUsuario=$idUsuario");exit;
+    header("Location: ../cadastro_aula.php?result=7&idUsuario=$idUsuario");
+    exit;
 }
 
 
 /********************************************************************/
-/*  inserir novo usuário                                            */
+/*  inserir nova aula                                           */
 /********************************************************************/
 $salvaAula  = phpLibSalvaAula($data, $horario, $idInstrutor, $idCarro);
 if(!$salvaAula){
-echo '<pre>';print_r($comparaAula);exit;    
-
-
-header("Location: ../cadastro_aula.php?result=1&idUsuario=$idUsuario");
+header("Location: ../cadastro_aula.php?result=5&idUsuario=$idUsuario");
 exit;
 }
+
+
+header("Location: ../cadastro_aula.php?result=0&idUsuario=$idUsuario");
+exit;
 
 ?>

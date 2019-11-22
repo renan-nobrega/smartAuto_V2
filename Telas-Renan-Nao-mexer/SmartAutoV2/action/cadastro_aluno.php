@@ -21,10 +21,12 @@ $tipoUsuario    = 1;
 /********************************************************************/
 $salvaCadastro  = phpLibSalvaUsuario($nome, $cpf, $email, $senha, $tipoUsuario);
 if(!$salvaCadastro){
-echo '<pre>';print_r($salvaCadastro);exit;    
+header("Location: ../cadastro_aluno.php?result=4&idUsuario=$idUsuario");
+exit;
+    
 }
 
-header('Location: ../cadastro_aluno.php?testeSucesso=1');
+header("Location: ../cadastro_aluno.php?result=0&idUsuario=$idUsuario");
 exit;
 
 ?>

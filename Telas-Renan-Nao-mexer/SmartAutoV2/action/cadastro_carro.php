@@ -16,14 +16,16 @@ $modelo         = (string)$_POST['modelo'];
 
 //echo '<pre>';print_r($_POST);exit;
 /********************************************************************/
-/*  inserir novo usuário                                            */
+/*  inserir novo carro                                           */
 /********************************************************************/
 $salvaCadastro  = phpLibSalvaCarro($placa, $marca, $modelo);
 if(!$salvaCadastro){
-    echo '<pre>';print_r('Deu Ruim');exit;    
+  
+    header("Location: ../cadastro_carro.php?result=7&idUsuario=$idUsuario");
+    exit;
 }
 
-header('Location: ../cadastro_carro.php?testeSucesso=1');
+header("Location: ../cadastro_carro.php?result=0&idUsuario=$idUsuario");
 exit;
 
 

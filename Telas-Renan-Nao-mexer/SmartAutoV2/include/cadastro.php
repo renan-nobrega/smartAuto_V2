@@ -382,19 +382,29 @@ function msgErro($result){
                 </div>";
             break;
         case 3:
-            $r = "10:00";
+            $r = "<div class='alert alert-danger' role='alert' align='center'>
+                    <strong>Aula já foi reservada</strong>
+                </div>"
             break;
         case 4:
-            $r = "11:00";
+            $r = "<div class='alert alert-danger' role='alert' align='center'>
+                    <strong>Falha ao inserir novo usuario</strong>
+                </div>"
             break;
         case 5:
-            $r = "12:00";
+            $r = "<div class='alert alert-danger' role='alert' align='center'>
+                    <strong>Falha ao inserir nova aula</strong>
+                </div>"
             break;
         case 6:
-            $r = "13:00";
+            $r = "<div class='alert alert-danger' role='alert' align='center'>
+                    <strong>Instrutor não disponível</strong>
+                </div>"
             break;
         case 7:
-            $r = "14:00";
+            $r = "<div class='alert alert-danger' role='alert' align='center'>
+                    <strong>Carro não disponível</strong>
+                </div>"
             break;
         case 8:
             $r = "15:00";

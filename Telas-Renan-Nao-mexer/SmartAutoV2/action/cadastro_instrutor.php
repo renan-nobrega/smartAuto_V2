@@ -19,14 +19,15 @@ $senha          = (string)$_POST['senha'];
 $tipoUsuario    = 2;
 
 /********************************************************************/
-/*  inserir novo usuário                                            */
+/*  inserir novo instrutor                                        */
 /********************************************************************/
 $salvaCadastro  = phpLibSalvaInstrutor($nome, $cpf, $cnh, $email, $carro, $periodo, $senha, $tipoUsuario);
 if(!$salvaCadastro){
-    echo '<pre>';print_r($salvaCadastro);exit;    
+    header("Location: ../cadastro_instrutor.php?result=6&idUsuario=$idUsuario");
+exit;  
 }
 
-header('Location: ../agendar.php?testeSucesso=1');
+header("Location: ../cadastro_instrutor.php?result=0&idUsuario=$idUsuario");
 exit;
 
 

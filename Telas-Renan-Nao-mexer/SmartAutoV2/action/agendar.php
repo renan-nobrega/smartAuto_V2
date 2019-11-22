@@ -21,6 +21,7 @@ $idUsuario              = (int)$_GET['idUsuario'];
 $statusAula  = getStatusAula($idAula);
 if(!$statusAula){
     header("Location: ../agendar.php?result=2&idUsuario=$idUsuario");
+    exit;
 }
 
 if($statusAula == 1){
@@ -30,9 +31,11 @@ if($statusAula == 1){
     $salvaReservaAula  = phpLibReservaAula($idAula, $idUsuario);
     if(!$salvaReservaAula){
         header("Location: ../agendar.php?result=1&idUsuario=$idUsuario");
+        exit;
     }
 }else{
     header("Location: ../agendar.php?result=1&idUsuario=$idUsuario");
+    exit;
 }
 
 header("Location: ../agendar.php?result=0&idUsuario=$idUsuario");
