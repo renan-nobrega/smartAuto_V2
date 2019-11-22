@@ -20,7 +20,7 @@ $idUsuario              = (int)$_GET['idUsuario'];
 /********************************************************************/
 $statusAula  = getStatusAula($idAula);
 if(!$statusAula){
-    header("Location: ../agendar.php?result=0&idUsuario=$idUsuario");
+    header("Location: ../agendar.php?result=2&idUsuario=$idUsuario");
 }
 
 if($statusAula == 1){
@@ -29,13 +29,13 @@ if($statusAula == 1){
     /********************************************************************/
     $salvaReservaAula  = phpLibReservaAula($idAula, $idUsuario);
     if(!$salvaReservaAula){
-        echo '<pre>';print_r('deu ruim');exit;    
+        header("Location: ../agendar.php?result=1&idUsuario=$idUsuario");
     }
 }else{
-    header("Location: ../agendar.php?result=0&idUsuario=$idUsuario");
+    header("Location: ../agendar.php?result=1&idUsuario=$idUsuario");
 }
 
-header("Location: ../agendar.php?result=1&idUsuario=$idUsuario");
+header("Location: ../agendar.php?result=0&idUsuario=$idUsuario");
 exit;
 
 

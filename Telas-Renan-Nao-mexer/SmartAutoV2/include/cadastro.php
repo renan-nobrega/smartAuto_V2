@@ -377,7 +377,9 @@ function msgErro($result){
                 </div>";
             break;
         case 2:
-            $r = "09:00";
+            $r = "<div class='alert alert-danger' role='alert' align='center'>
+                    <strong>Aula já foi reservada</strong>
+                </div>";
             break;
         case 3:
             $r = "10:00";
