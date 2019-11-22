@@ -1,6 +1,18 @@
+
+
+
 <br>
 <div class="container">
 
+    <?php
+    $result = $_GET['result'];
+    
+    if ($result != 0){
+        $msg    = msgErro($result);
+        echo $msg;
+    }
+    ?>
+   
     <form class="well form-horizontal" action="action/cadastro_aluno.php" method="post"  id="contact_form">
 
 
@@ -29,7 +41,7 @@
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-id-card" aria-hidden="true"></i>
                     </span>
-                    <input  name="cpf" placeholder="CPF" class="form-control"  type="text" required>
+                    <input  name="cpf" placeholder="CPF" id="cpf" class="form-control"  type="text" required>
                 </div>
             </div>
         </div>
@@ -63,34 +75,25 @@
         </div>
 
 
-<!--
-        <div class="form-group"> 
-            <label class="col-md-4 control-label">Department / Office</label>
-            <div class="col-md-4 selectContainer">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                    <select name="department" class="form-control selectpicker">
-                        <option value="">Select your Department/Office</option>
-                        <option>Department of Engineering</option>
-                        <option>Department of Agriculture</option>
-                        <option >Accounting Office</option>
-                        <option >Tresurer's Office</option>
-                    </select>
-                </div>
-            </div>
-        </div>
--->
+
 
 
         <!-- Button -->
         <div class="form-group">
             <label class="col-md-4 control-label"></label>
             <div class="col-md-4"><br>
-<!--                <input class="btn btn-warning" type="submit" value="Submit">-->
                 <button type="submit" class="btn btn-primary">Submit</button>
 
-<!--                <button type="submit" class="btn btn-warning" ><span class="glyphicon glyphicon-send"></span></button>-->
             </div>
         </div>
     </form>
 </div>
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#cpf").mask("999.999.999-99");
+    });
+</script>

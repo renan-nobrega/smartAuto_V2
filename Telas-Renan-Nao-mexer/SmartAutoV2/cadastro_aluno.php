@@ -1,4 +1,5 @@
 <?php require_once "include/db.php"; ?>
+<?php require_once "include/cadastro.php"; ?>
 <!-- ================================================================= -->
 <!-- HTML DA PAGINA - PRINCIPAL
 <!-- ================================================================= -->

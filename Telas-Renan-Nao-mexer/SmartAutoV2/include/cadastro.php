@@ -1,26 +1,18 @@
 <?php
-
-
 /********************************************************************/
 /*  funcções PHP                                                    */
 /********************************************************************/
-
-
-
 /********************************************************************/
 /*  cadastra um novo aluno                                          */
 /********************************************************************/
 function phpLibSalvaUsuario($nome, $cpf, $email, $senha, $tipoUsuario){
     $sql = "INSERT INTO cadastro (nome, cpf, email, senha, tipoUsuario)
 VALUES ('$nome', '$cpf', '$email', '$senha', $tipoUsuario)";
-//    return $sql;
-$result = mysql_query($sql);
-if(!$result) return false;
-return mysql_insert_id();    
+    //    return $sql;
+    $result = mysql_query($sql);
+    if(!$result) return false;
+    return mysql_insert_id();    
 }
-
-
-
 /********************************************************************/
 /*  cadastra um novo carro                                          */
 /********************************************************************/
@@ -32,19 +24,17 @@ VALUES ('$placa', '$marca', '$modelo')";
     if(!$result) return false;
     return mysql_insert_id();    
 }
-
 /********************************************************************/
 /*  cadastra um novo carro                                          */
 /********************************************************************/
 function phpLibSalvaInstrutor($nome, $cpf, $cnh, $email, $carro, $periodo, $senha, $tipoUsuario){
     $sql = "INSERT INTO cadastro (nome, cpf, cnh, email, idCarro, idPeriodo, senha, tipoUsuario)
 VALUES ('$nome', '$cpf', '$cnh', '$email', '$carro', '$periodo', '$senha', '$tipoUsuario')";
-//        return $sql;
+    //        return $sql;
     $result = mysql_query($sql);
     if(!$result) return false;
     return mysql_insert_id();    
 }
-
 /********************************************************************/
 /*  pesquisa se usuário já existe                                   */
 /********************************************************************/
@@ -63,7 +53,6 @@ function phpLibLogaUsuario($email, $senha){
     } else return false;
     return $r[0];   
 }
-
 /********************************************************************/
 /*  Busca todos os instrutores cadastrados                          */
 /********************************************************************/
@@ -72,7 +61,7 @@ function get_all_instrutores(){
     FROM cadastro
     WHERE tipoUsuario = '2' AND status = '1';
     ";
-//            return $sql;
+    //            return $sql;
     $result = mysql_query($sql);
     if(!$result) return false;
     if(mysql_num_rows($result)>0) {
@@ -82,8 +71,6 @@ function get_all_instrutores(){
     } else return false;
     return $r;   
 }
-
-
 /********************************************************************/
 /*  Busca todos os carros cadastrados                               */
 /********************************************************************/
@@ -102,8 +89,6 @@ function get_all_carros(){
     } else return false;
     return $r;   
 }
-
-
 /********************************************************************/
 /*  cadastrar aula                                                  */
 /********************************************************************/
@@ -115,8 +100,6 @@ VALUES ('$data', '$horario', '$idInstrutor', '$idCarro')";
     if(!$result) return false;
     return mysql_insert_id();    
 }
-
-
 /********************************************************************/
 /*  Busca todas as aulas cadastrados                               */
 /********************************************************************/
@@ -135,7 +118,6 @@ function get_all_aulas_cadastradas(){
     } else return false;
     return $r;   
 }
-
 /********************************************************************/
 /*  Troca o ID da horario pelo horario                              */
 /********************************************************************/
@@ -178,12 +160,8 @@ function horarioAula($idHorarioAula){
             $r = "19:00";
             break;            
     }
-    
-    
     return $r;   
 }
-
-
 /********************************************************************/
 /*  busca os dados do instrutor apartir do ID                       */
 /********************************************************************/
@@ -202,8 +180,6 @@ function getInstrutor($idInstrutor){
     } else return false;
     return $r;   
 }
-
-
 /********************************************************************/
 /*  busca os dados do carro apartir do ID                       */
 /********************************************************************/
@@ -222,8 +198,6 @@ function getCarro($idCarro){
     } else return false;
     return $r;   
 }
-
-
 /********************************************************************/
 /*  reserva aula                                                    */
 /********************************************************************/
@@ -233,14 +207,11 @@ function phpLibReservaAula($idAula, $idAluno){
         idAluno= '$idAluno'
     WHERE idAula = '$idAula'
     ";
-//            return $sql;
+    //            return $sql;
     $result = mysql_query($sql);
     if(!$result) return false;
     return 1;    
 }
-
-
-
 /********************************************************************/
 /*  busca as aulas reservadas do aluno                              */
 /********************************************************************/
@@ -249,7 +220,7 @@ function get_all_aulas_reservadas($idUsuario){
     FROM aulaCadastrada
     WHERE idAluno = '$idUsuario' AND status = '2';
     ";
-//                return $sql;
+    //                return $sql;
     $result = mysql_query($sql);
     if(!$result) return false;
     if(mysql_num_rows($result)>0) {
@@ -259,8 +230,6 @@ function get_all_aulas_reservadas($idUsuario){
     } else return false;
     return $r;   
 }
-
-
 /********************************************************************/
 /*  busca as aulas reservadas do Instrutor                          */
 /********************************************************************/
@@ -269,7 +238,7 @@ function get_all_aulas_do_instrutor($idUsuario){
     FROM aulaCadastrada
     WHERE idInstrutor = '$idUsuario' AND status = '2';
     ";
-//                    return $sql;
+    //                    return $sql;
     $result = mysql_query($sql);
     if(!$result) return false;
     if(mysql_num_rows($result)>0) {
@@ -279,8 +248,6 @@ function get_all_aulas_do_instrutor($idUsuario){
     } else return false;
     return $r;   
 }
-
-
 /********************************************************************/
 /*  busca o ID do aluno apartir do ID da aula                       */
 /********************************************************************/
@@ -299,7 +266,6 @@ function getIdAluno($idAula){
     } else return false;
     return $r;   
 }
-
 /********************************************************************/
 /*  busca o nome do aluno apartir do ID                             */
 /********************************************************************/
@@ -308,7 +274,7 @@ function getAlunoNome($idAluno){
     FROM cadastro
     WHERE idAluno = '$idAluno' AND status = '1';
     ";
-//                return $sql;
+    //                return $sql;
     $result = mysql_query($sql);
     if(!$result) return false;
     if(mysql_num_rows($result)>0) {
@@ -318,8 +284,6 @@ function getAlunoNome($idAluno){
     } else return false;
     return $r;   
 }
-
-
 /********************************************************************/
 /*  Marca que a aula foi concluida                                  */
 /********************************************************************/
@@ -328,12 +292,11 @@ function phpLibMarcarAulaDada($idAula, $idAluno){
     SET status = '3'
     WHERE idAula = '$idAula'
     ";
-//                return $sql;
+    //                return $sql;
     $result = mysql_query($sql);
     if(!$result) return false;
     return 1;    
 }
-
 /********************************************************************/
 /*  Marca que a aula foi concluida                                  */
 /********************************************************************/
@@ -347,6 +310,106 @@ function phpLibMarcarAulaNaoDada($idAula, $idAluno){
     if(!$result) return false;
     return 1;    
 }
+/********************************************************************/
+/*  busca o nome do aluno apartir do ID                             */
+/********************************************************************/
+function getStatusAula($idAula){
+    $sql = "SELECT status
+    FROM aulaCadastrada
+    WHERE idAula = '$idAula';
+    ";
+    //                return $sql;
+    $result = mysql_query($sql);
+    if(!$result) return false;
+    if(mysql_num_rows($result)>0) {
+        while($row = mysql_fetch_assoc($result)) {
+            $r = $row;
+        }
+    } else return false;
+    return $r['status'];   
+}
+/********************************************************************/
+/*  Verifica se o instrutor esta disponivel                        */
+/********************************************************************/
+function verificaInstrutorLivre($data, $horario, $idInstrutor){
+    $sql = "SELECT * 
+    FROM aulaCadastrada
+    WHERE dia = '$data' AND idHorario = '$horario' AND idInstrutor = '$idInstrutor';
+    ";
+    //                    return $sql;
+    $result = mysql_query($sql);
+    if(!$result) return false;
+    if(mysql_num_rows($result)>0) {
+        while($row = mysql_fetch_assoc($result)) {
+            $r[] = $row;
+        }
+    } else return 1;
+    return 2;   
+}
+/********************************************************************/
+/*  Verifica se o carro esta disponivel                             */
+/********************************************************************/
+function verificaCarroLivre($data, $horario, $idCarro){
+    $sql = "SELECT * 
+    FROM aulaCadastrada
+    WHERE dia = '$data' AND idHorario = '$horario' AND idCarro = '$idCarro';
+    ";
+    //                    return $sql;
+    $result = mysql_query($sql);
+    if(!$result) return false;
+    if(mysql_num_rows($result)>0) {
+        while($row = mysql_fetch_assoc($result)) {
+            $r[] = $row;
+        }
+    } else return 1;
+    return 2;   
+}
 
 
+/********************************************************************/
+/*  Mensagens de erro                                               */
+/********************************************************************/
+function msgErro($result){
+    switch ($result) {
+        case 1:
+            $r = "<div class='alert alert-danger' role='alert' align='center'>
+                    <strong>Erro !!!</strong>
+                </div>";
+            break;
+        case 2:
+            $r = "09:00";
+            break;
+        case 3:
+            $r = "10:00";
+            break;
+        case 4:
+            $r = "11:00";
+            break;
+        case 5:
+            $r = "12:00";
+            break;
+        case 6:
+            $r = "13:00";
+            break;
+        case 7:
+            $r = "14:00";
+            break;
+        case 8:
+            $r = "15:00";
+            break;
+        case 9:
+            $r = "16:00";
+            break;
+        case 10:
+            $r = "17:00";
+            break;
+        case 11:
+            $r = "18:00";
+            break;
+        case 12:
+            $r = "19:00";
+            break;            
+    }
+    return $r;   
+}
 ?>

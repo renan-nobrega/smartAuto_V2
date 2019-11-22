@@ -13,7 +13,15 @@ $todos_carros               = get_all_carros();
 ?>
 <br>
 <div class="container">
+   
+    <?php
+    $result = $_GET['result'];
 
+    if ($result != 0){
+        $msg    = msgErro($result);
+        echo $msg;
+    }
+    ?>
     <form class="well form-horizontal" action="action/cadastro_aula.php" method="post"  id="contact_form">
 
 
@@ -25,7 +33,7 @@ $todos_carros               = get_all_carros();
         <div class="form-group">
             <label class="col-md-4 control-label">Dia</label>  
             <div class="col-md-4 inputGroupContainer">
-                <div class="input-group date" data-provide="datepicker">
+                <div class="input-group date" data-provide="datepicker" data-date-format="dd/mm/yyyy">
                     <input type="text" class="form-control" name="data" required>
                     <div class="input-group-addon">
                         <span class="fa fa-calendar"></span>
@@ -112,3 +120,11 @@ $todos_carros               = get_all_carros();
         </div>
     </form>
 </div>
+
+
+<!--
+<script>
+    $(function(){
+        $('.datepicker.').datepicker({dateformat:"dd-mm-yy"});
+    });
+</script>-->

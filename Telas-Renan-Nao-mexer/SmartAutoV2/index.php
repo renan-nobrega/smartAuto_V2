@@ -1,19 +1,11 @@
 <?php
 $error = (int)$_GET['error'];
 //echo '<pre>';print_r($var);exit;
-
 ?>
-
-
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
-        
-        
-        
-
-
 <title>Smart Auto</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,9 +13,6 @@ $error = (int)$_GET['error'];
 <link rel="shortcut icon" type="image/x-icon" href="img/fusca2.jpg">
 <!-- Fonts -->
 <link href="fonts/lato/lato.css" rel="stylesheet">
-        
-        
-        
         <title>CodePen - Random Login Form</title>
         <style>
             @import url(http://fonts.googleapis.com/css?family=Exo:100,200,400);
@@ -150,7 +139,6 @@ $error = (int)$_GET['error'];
             }
         </style>
         <?php include "layout/head.php"; ?>    
-
         <script src="js/prefixfree.min.js"></script>
     </head>
     <body>
@@ -172,9 +160,7 @@ $error = (int)$_GET['error'];
                 <input type="email" placeholder="E-mail" name="email" required><br>
                 <input type="password" placeholder="Password" name="senha" required><br>
                 <input type="submit" value="Login">
-                
             </form>
-           
         </div>
         <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
     </body>

@@ -3,6 +3,11 @@
     <?php
     $idUsuario            = (int)$_GET['idUsuario'];
 
+    $result = $_GET['result'];
+    if ($result != 0){
+        $msg    = msgErro($result);
+        echo $msg;
+    }
     ?>
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -37,7 +42,7 @@
                             </th>
                             <th data-field="carro" data-filter-control="input" data-align="center" data-sortable="true" data-visible="true" class="col-xs-1">Carro
                             </th>
-                                                            
+
 
                         </tr>
                     </thead>

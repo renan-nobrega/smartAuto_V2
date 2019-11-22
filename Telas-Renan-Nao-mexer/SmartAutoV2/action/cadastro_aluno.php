@@ -27,5 +27,4 @@ echo '<pre>';print_r($salvaCadastro);exit;
 header('Location: ../cadastro_aluno.php?testeSucesso=1');
 exit;
 
-
 ?>

@@ -1,6 +1,15 @@
 <br>
 <div class="container">
 
+    <?php
+    $result = $_GET['result'];
+
+    if ($result != 0){
+        $msg    = msgErro($result);
+        echo $msg;
+    }
+
+    ?>
     <form class="well form-horizontal" action="action/cadastro_carro.php" method="post"  id="contact_form">
 
 

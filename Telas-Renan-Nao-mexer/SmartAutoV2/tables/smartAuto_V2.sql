@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 21-Nov-2019 às 17:47
+-- Generation Time: 22-Nov-2019 às 18:08
 -- Versão do servidor: 5.7.27-0ubuntu0.16.04.1
 -- PHP Version: 5.6.39-1+ubuntu16.04.1+deb.sury.org+1
 
@@ -32,16 +32,19 @@ CREATE TABLE `aulaCadastrada` (
   `idHorario` int(20) NOT NULL,
   `idInstrutor` int(20) NOT NULL,
   `idCarro` int(20) NOT NULL,
-  `status` int(20) NOT NULL DEFAULT '1' COMMENT '1 = livre / 2 = reservada / 0 = Cancelada'
+  `idAluno` int(20) DEFAULT NULL,
+  `status` int(20) NOT NULL DEFAULT '1' COMMENT '0 = Cancelada / 1 = livre / 2 = reservada / 3 = aula dada / 4 = Aula não dada'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `aulaCadastrada`
 --
 
-INSERT INTO `aulaCadastrada` (`idAula`, `dia`, `idHorario`, `idInstrutor`, `idCarro`, `status`) VALUES
-(1, '11/22/2019', 4, 5, 2, 1),
-(2, '11/25/2019', 4, 3, 2, 1);
+INSERT INTO `aulaCadastrada` (`idAula`, `dia`, `idHorario`, `idInstrutor`, `idCarro`, `idAluno`, `status`) VALUES
+(1, '11/22/2019', 4, 5, 2, NULL, 1),
+(2, '11/25/2019', 4, 3, 2, NULL, 1),
+(3, '28/11/2019', 11, 5, 2, NULL, 1),
+(4, '29/11/2019', 12, 5, 1, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -69,9 +72,10 @@ CREATE TABLE `cadastro` (
 INSERT INTO `cadastro` (`idAluno`, `nome`, `cpf`, `email`, `senha`, `tipoUsuario`, `cnh`, `idCarro`, `idPeriodo`, `status`) VALUES
 (1, 'Teste de Login', '123.456.789-00', 'teste@usuarioNovo.com', '1234', 1, NULL, NULL, NULL, 1),
 (2, 'UsuÃ¡rio topperson', '230.930.748-35', 'suuario@teste.com', '1234', 1, NULL, NULL, NULL, 1),
-(3, 'Teste instrutor', '230.930.748-35', 'root@root.com', '1234', 2, '232645454', 3, 2, 1),
+(3, 'Teste instrutor', '230.930.748-35', 'root@root.com', '1234', 1, '232645454', 3, 2, 1),
 (4, 'Renan mais um teste', '23456456131', 'renan.nobrega89@gmail.com', '1234', 1, NULL, NULL, NULL, 1),
-(5, 'peneses', '91276312983', 'renan.nobrega89@gmail.com', '123456', 2, '2391846723798', 2, 1, 1);
+(5, 'Teste Foda', '91276312983', 'renan.nobrega89@gmail.com', '123456', 2, '2391846723798', 2, 1, 1),
+(6, 'GILMAR Feminino SUISSO', '999.999.999-99', 'suisso@gmail.com', '1234', 2, '3256464646', 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -126,7 +130,7 @@ ALTER TABLE `carros`
 -- AUTO_INCREMENT for table `aulaCadastrada`
 --
 ALTER TABLE `aulaCadastrada`
-  MODIFY `idAula` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idAula` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `cadastro`
 --
